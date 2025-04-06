@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Selenium测试页</title>
+</head>
+<body>
+    <h1 id="title">自动化测试训练营</h1>
+    <input type="text" id="search-input" placeholder="输入关键词">
+    <button id="search-btn" onclick="alert('搜索中...')">搜索</button>
+
+    <!-- 动态内容区域 -->
+    <div id="result-area"></div>
+
+    <script>
+        // 模拟异步加载
+        setTimeout(() => {
+            document.getElementById("result-area").innerHTML =
+                "<p>搜索结果：找到30条相关数据</p>";
+        }, 2000);
+    </script>
+</body>
+</html>
