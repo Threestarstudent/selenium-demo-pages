@@ -1,25 +1,122 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <!-- 关键1：声明UTF-8编码 -->
     <meta charset="UTF-8">
-    <title>自动化测试页面</title>
+    <title>HTML Form Test Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        .form-container {
+            background: #f5f5f5;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        .form-row {
+            margin-bottom: 15px;
+        }
+        label {
+            display: inline-block;
+            width: 150px;
+            vertical-align: top;
+        }
+        input[type="submit"] {
+            background: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        textarea {
+            width: 300px;
+            height: 100px;
+        }
+    </style>
 </head>
 <body>
-    <!-- 登录表单 -->
-    <input type="email" id="email" placeholder="邮箱">
-    <input type="password" id="password" placeholder="密码">
+    <div class="form-container">
+        <h2>Basic HTML Form</h2>
+        <form action="/form-handler" method="post">
+            <!-- Username -->
+            <div class="form-row">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username">
+            </div>
 
-    <!-- 多步骤操作 -->
-    <button id="step1" onclick="document.getElementById('step2').style.display='block'">
-        开始测试
-    </button>
-    <div id="step2" style="display:none;">
-        <p>测试问题1：</p>
-        <select id="question1">
-            <option value="A">选项A</option>
-            <option value="B">选项B</option>
-        </select>
+            <!-- Password -->
+            <div class="form-row">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password">
+            </div>
+
+            <!-- Comments -->
+            <div class="form-row">
+                <label for="comments">Comments:</label>
+                <textarea id="comments" name="comments"
+                    placeholder="Enter your comments here..."></textarea>
+            </div>
+
+            <!-- Radio Buttons -->
+            <div class="form-row">
+                <label>Select a radio:</label>
+                <input type="radio" id="radio1" name="radioval" value="radio1">
+                <label for="radio1">Radio 1</label>
+
+                <input type="radio" id="radio2" name="radioval" value="radio2">
+                <label for="radio2">Radio 2</label>
+
+                <input type="radio" id="radio3" name="radioval" value="radio3">
+                <label for="radio3">Radio 3</label>
+            </div>
+
+            <!-- Checkboxes -->
+            <div class="form-row">
+                <label>Select checkboxes:</label>
+                <input type="checkbox" id="check1" name="check" value="check1">
+                <label for="check1">Checkbox 1</label>
+
+                <input type="checkbox" id="check2" name="check" value="check2">
+                <label for="check2">Checkbox 2</label>
+
+                <input type="checkbox" id="check3" name="check" value="check3">
+                <label for="check3">Checkbox 3</label>
+            </div>
+
+            <!-- Dropdown -->
+            <div class="form-row">
+                <label for="dropdown">Select item:</label>
+                <select id="dropdown" name="dropdown">
+                    <option value="dd1">Drop Down Item 1</option>
+                    <option value="dd2">Drop Down Item 2</option>
+                    <option value="dd3">Drop Down Item 3</option>
+                </select>
+            </div>
+
+            <!-- Multi-select -->
+            <div class="form-row">
+                <label for="multi-select">Multi Select:</label>
+                <select id="multi-select" name="multi-select" multiple size="3">
+                    <option value="ms1">Selection 1</option>
+                    <option value="ms2">Selection 2</option>
+                    <option value="ms3">Selection 3</option>
+                </select>
+            </div>
+
+            <!-- File Upload -->
+            <div class="form-row">
+                <label for="filename">Upload File:</label>
+                <input type="file" id="filename" name="filename">
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-row">
+                <input type="submit" value="Submit">
+            </div>
+        </form>
     </div>
 </body>
 </html>
