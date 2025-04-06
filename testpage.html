@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Selenium测试页</title>
+    <!-- 关键1：声明UTF-8编码 -->
+    <meta charset="UTF-8">
+    <title>自动化测试页面</title>
 </head>
 <body>
-    <h1 id="title">自动化测试训练营</h1>
-    <input type="text" id="search-input" placeholder="输入关键词">
-    <button id="search-btn" onclick="alert('搜索中...')">搜索</button>
+    <!-- 登录表单 -->
+    <input type="email" id="email" placeholder="邮箱">
+    <input type="password" id="password" placeholder="密码">
 
-    <!-- 动态内容区域 -->
-    <div id="result-area"></div>
-
-    <script>
-        // 模拟异步加载
-        setTimeout(() => {
-            document.getElementById("result-area").innerHTML =
-                "<p>搜索结果：找到30条相关数据</p>";
-        }, 2000);
-    </script>
+    <!-- 多步骤操作 -->
+    <button id="step1" onclick="document.getElementById('step2').style.display='block'">
+        开始测试
+    </button>
+    <div id="step2" style="display:none;">
+        <p>测试问题1：</p>
+        <select id="question1">
+            <option value="A">选项A</option>
+            <option value="B">选项B</option>
+        </select>
+    </div>
 </body>
 </html>
